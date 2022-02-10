@@ -7,20 +7,12 @@ import android.hardware.SensorManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.Context;
-import android.hardware.Sensor;
 import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
+public class MainAtivity extends AppCompatActivity implements SensorEventListener, StepListener {
     private TextView textView;
     private StepDetector simpleStepDetector;
     private SensorManager sensorManager;
@@ -55,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onClick(View arg0) {
 
                 numSteps = 0;
-                sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+                sensorManager.registerListener(MainAtivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
 
             }
         });
@@ -66,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onClick(View arg0) {
 
-                sensorManager.unregisterListener(MainActivity.this);
+                sensorManager.unregisterListener(MainAtivity.this);
 
             }
         });
@@ -97,9 +89,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void StartHBM(View view) {
 
-        Intent intent = new Intent(MainActivity.this, HeartRateMonitor.class);
+        Intent intent = new Intent(MainAtivity.this, HeartRateMonitor.class);
         startActivity(intent);
     }
 }
-{
-}
+
+
